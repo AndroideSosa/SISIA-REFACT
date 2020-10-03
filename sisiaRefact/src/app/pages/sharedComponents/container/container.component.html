@@ -1,0 +1,31 @@
+<p>container works!</p>
+<breadcrumb #parent>
+    <ol class="breadcrumb">
+            <li>
+                <i class="icon icon-home"></i>
+            </li>
+        <ng-template ngFor let-route [ngForOf]="parent.breadcrumbs">
+            <li *ngIf="!route.terminal" class="breadcrum-item">
+                <a href="" [routerLink]="[route.url]"> {{ route.displayName }}</a>
+            </li>
+            <li *ngIf="route.terminal" class="breadcrumb-item active"> {{ route.displayName }}</li>
+        </ng-template>
+    </ol>
+</breadcrumb>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Leaves</h5>
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="'administracion-planeacion'" routerLinkActive="active"> administracion-planeacion </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="'home'" routerLinkActive="active"> home </a>
+            </li>
+          </ul> 
+        <p class="card-text">
+        </p>
+    </div>
+  </div>
+   
+<router-outlet></router-outlet>
