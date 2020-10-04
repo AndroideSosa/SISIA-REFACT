@@ -6,21 +6,27 @@ import { ContainerComponent } from './pages/sharedComponents/container/container
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   {
-    path: 'container', component: ContainerComponent, data: { breadcrumb: 'Container'},
+    path: 'inicio', component: ContainerComponent, data: { breadcrumb: 'Inicio'},
     children: [
-      { path: 'administracion-planeacion', 
-        data: { breadcrumb: 'Administracion de la Planeación'},
-        loadChildren: () => import('./pages/Registro-Presupuestal/Instancia-Ejecutora/administracion-planeacion/administracion-planeacion.module').then(m => m.AdministracionPlaneacionModule) 
-      },
       { path: 'home', 
         data: { breadcrumb: 'Home'},
-        loadChildren: () => import('./pages/sharedComponents/home/home.module').then(m => m.HomeModule) 
-      }
+        loadChildren: () => import('./pages/sharedComponents/home/home.module')
+          .then(m => m.HomeModule) 
+      },
+      { path: 'administracion-programa-trabajo',
+        data: { breadcrumb: 'Administracion Programa de Trabajo'},   
+        loadChildren: () => import('./pages/Planeacion/Instancia-Ejecutora/Módulos/administracion-programa-trabajo/administracion-programa-trabajo.module')
+          .then(m => m.AdministracionProgramaTrabajoModule) },
+      { path: 'recursos-humanos-materiales', 
+        data: { breadcrumb: 'Configuracion Plantillas'}, 
+        loadChildren: () => import('./pages/Planeacion/Instancia-Ejecutora/Módulos/recursos-humanos-materiales/recursos-humanos-materiales.module')
+          .then(m => m.RecursosHumanosMaterialesModule) },
+        { path: '', redirectTo: 'home', pathMatch: 'full'}
     ]
   },
+      { path: '', redirectTo: '/login', pathMatch: 'full'},
  ];
 
 @NgModule({

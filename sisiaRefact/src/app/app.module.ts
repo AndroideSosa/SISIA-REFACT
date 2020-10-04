@@ -4,11 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BreadcrumbModule } from 'angular-crumbs';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //Importación de componentes
 import { LoginComponent } from './auth/login/login.component';
 import { InformacionUsuarioComponent } from './pages/sharedComponents/informacion-usuario/informacion-usuario.component';
 import { ContainerComponent } from './pages/sharedComponents/container/container.component';
-
 
 @NgModule({
   declarations: [
@@ -20,7 +20,9 @@ import { ContainerComponent } from './pages/sharedComponents/container/container
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

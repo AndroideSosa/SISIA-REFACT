@@ -1,0 +1,17 @@
+<div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ul class="nav nav-tabs">
+                    <li [ngClass]="{'active': tab === '1'}"><a data-toggle="tab" (click)="goToDataIE()">Datos IE</a></li>
+                    <li [ngClass]="{'active': tab === '2'}"><a data-toggle="tab" (click)="goToPersonal()">Personal</a></li>
+                    <li [ngClass]="{'active': tab === '3'}"><a data-toggle="tab" (click)="goToInstallations()">Instalaciones</a></li>
+                    <li [ngClass]="{'active': tab === '4'}"><a data-toggle="tab" (click)="goToVehicleInventory()">Inventario Vehicular</a></li>
+                    <li [ngClass]="{'active': tab === '5'}"><a data-toggle="tab" (click)="goToActionActivity()">Bien o Servicio</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+</div>

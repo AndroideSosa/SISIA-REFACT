@@ -1,4 +1,19 @@
-<p>container works!</p>
+<p>Componente del menú principal</p>
+<div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Leaves</h5>
+            <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="'administracion-programa-trabajo'" routerLinkActive="active"> Administracion Programa de Trabajo </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="'recursos-humanos-materiales'" routerLinkActive="active"> Configuracion Plantillas </a>
+                </li>
+              </ul> 
+            <p class="card-text">
+            </p>
+        </div>
+</div>
 <breadcrumb #parent>
     <ol class="breadcrumb">
             <li>
@@ -11,21 +26,12 @@
             <li *ngIf="route.terminal" class="breadcrumb-item active"> {{ route.displayName }}</li>
         </ng-template>
     </ol>
-</breadcrumb>
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">Leaves</h5>
-        <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="'administracion-planeacion'" routerLinkActive="active"> administracion-planeacion </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="'home'" routerLinkActive="active"> home </a>
-            </li>
-          </ul> 
-        <p class="card-text">
-        </p>
-    </div>
-  </div>
-   
+</breadcrumb>   
+<p>Componente de la información del usuario</p>
+
+            <span class="btn-hidden"></span>
+            <a [routerLink]="['/login']"   class="btn btn-primary btn-block btn-sm">
+                Salir de sesión
+            </a>
+ <br>
 <router-outlet></router-outlet>
