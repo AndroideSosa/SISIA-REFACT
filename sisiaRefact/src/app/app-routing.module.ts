@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { ContainerComponent } from './pages/sharedComponents/container/container.component';
 
-
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -17,13 +16,13 @@ const routes: Routes = [
       },
       { path: 'administracion-programa-trabajo',
         data: { breadcrumb: 'Administracion Programa de Trabajo'},   
-        loadChildren: () => import('./pages/Planeacion/Instancia-Ejecutora/Módulos/administracion-programa-trabajo/administracion-programa-trabajo.module')
+        loadChildren: () => import('./pages/Planeacion/Instancia-Ejecutora/Modulos/administracion-programa-trabajo/administracion-programa-trabajo.module')
           .then(m => m.AdministracionProgramaTrabajoModule) },
-      { path: 'recursos-humanos-materiales', 
-        data: { breadcrumb: 'Configuracion Plantillas'}, 
-        loadChildren: () => import('./pages/Planeacion/Instancia-Ejecutora/Módulos/recursos-humanos-materiales/recursos-humanos-materiales.module')
-          .then(m => m.RecursosHumanosMaterialesModule) },
-        { path: '', redirectTo: 'home', pathMatch: 'full'}
+      { path: 'recursos-humanos-materiales',
+        data: { breadcrumb: 'Recursos Humanos Materiales'}, 
+        loadChildren: () => import('./pages/Planeacion/Instancia-Ejecutora/Modulos/Configuracion-Plantillas/recursos-humanos-materiales/recursos-humanos-materiales.module')
+           .then(m => m.RecursosHumanosMaterialesModule) },
+      { path: '', redirectTo: 'home', pathMatch: 'full'}
     ]
   },
       { path: '', redirectTo: '/login', pathMatch: 'full'},
